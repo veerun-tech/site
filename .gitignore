@@ -6,3 +6,5 @@ npm-debug.log
 db.json
 dist
 deploy_dist
+yarn-error.log
+
