@@ -10,7 +10,7 @@ keywords:
 author: Veerun Tech.
 email: veerun@163.com
 favicon: /assets/images/favicon.png
-language: zh-cn
+language: zh-CN
 timezone: Asia/Shanghai
 # https://github.com/ppoffice/hexo-theme-icarus
 theme: icarus
@@ -78,6 +78,7 @@ pagination_dir: page
 # Extensions
 ## Plugins: https://hexo.io/plugins/
 ## Themes: https://hexo.io/themes/
+## Tags: https://hexo.io/docs/tag-plugins.html
 
 # 在归档页面显示所有文章
 archive_generator:
