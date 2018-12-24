@@ -31,9 +31,9 @@
                 <span class="level-item has-text-grey">
                     <i class="fas fa-user-graduate"></i>&nbsp;
                     <% if (post.author) { %>
-                        <% var author = {}; %>
+                        <% let author = {}; %>
                         <% if (typeof(post.author) === 'string') { %>
-                            <% var matches = /^(.+?)(\s*<(.+)>)?$/.exec(post.author); %>
+                            <% let matches = /^(.+?)(\s*<(.+)>)?$/.exec(post.author); %>
                             <% author.name = matches[1]; %>
                             <% if (/^http(s)?/.test(matches[3])) { %>
                                 <% author.url = matches[3]; %>

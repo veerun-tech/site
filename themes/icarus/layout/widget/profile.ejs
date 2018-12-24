@@ -74,8 +74,9 @@
         <% if (socialLinks !== null) { %>
         <div class="level is-mobile">
             <% for (let name in socialLinks) {
-                    let link = socialLinks[name]; %>
-            <a class="level-item button is-white is-marginless" target="_blank"
+                    let link = socialLinks[name];
+                    let target = /^mailto:/.test(link.url || link) ? '' : '_blank'; %>
+            <a class="level-item button is-white is-marginless" target="<%= target %>"
                 title="<%= name %>" href="<%= url_for(typeof(link) === 'string' ? link : link.url) %>">
                 <% if (typeof(link) === 'string') { %>
                 <%= name %>
