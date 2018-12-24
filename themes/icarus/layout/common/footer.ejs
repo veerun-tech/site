@@ -2,17 +2,18 @@
     <div class="container">
         <div class="level">
             <div class="level-start has-text-centered-mobile">
-                <a class="footer-logo is-block has-mb-6" href="<%- url_for('/') %>">
+                <a class="footer-logo is-block has-mb-6" href="<%- url_for('/') %>" title="<%- config.title %>">
                 <% if (has_config('logo.text') && get_config('logo.text')) { %>
                     <%= get_config('logo.text') %>
                 <% } else { %>
-                    <img src="<%- url_for(get_config('logo')) %>" alt="<%= get_config('title') %>" height="28">
+                    <img src="<%- url_for(get_config('logo')) %>" height="28">
                 <% } %>
                 </a>
                 <p class="is-size-7">
-                &copy; <%= date(new Date(), 'YYYY') %> <%= get_config('author') || get_config('title') %>&nbsp;
-                Powered by <a href="http://hexo.io/" target="_blank">Hexo</a> & <a
-                        href="http://github.com/ppoffice/hexo-theme-icarus">Icarus</a>
+                &copy; <%= date(new Date(), 'YYYY') %> <%- mail_to(config.email, config.author) %>&nbsp;
+                Powered by
+                <a href="http://hexo.io/" target="_blank">Hexo</a>
+                & <a href="http://github.com/ppoffice/hexo-theme-icarus">Icarus</a>
                 </p>
             </div>
             <div class="level-end">

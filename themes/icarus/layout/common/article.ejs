@@ -28,6 +28,32 @@
                     <%= `${ time.locale(get_config('language', 'en')).humanize() } ${ __('article.read')} (${ __('article.about') } ${ words } ${ __('article.words') })` %>
                 </span>
                 <% } %>
+                <span class="level-item has-text-grey">
+                    <i class="fas fa-user-graduate"></i>&nbsp;
+                    <% if (post.author) { %>
+                        <% var author = {}; %>
+                        <% if (typeof(post.author) === 'string') { %>
+                            <% var matches = /^(.+?)(\s*<(.+)>)?$/.exec(post.author); %>
+                            <% author.name = matches[1]; %>
+                            <% if (/^http(s)?/.test(matches[3])) { %>
+                                <% author.url = matches[3]; %>
+                            <% } else { %>
+                                <% author.email = matches[3]; %>
+                            <% } %>
+                        <% } else { %>
+                            <% author = post.author;  %>
+                        <% } %>
+                        <% if (author.url) { %>
+                            <%- link_to(author.url, author.name, {external: true}) %>
+                        <% } else if (author.email) { %>
+                            <%- mail_to(author.email, author.name) %>
+                        <% } else { %>
+                            <%= author.name %>
+                        <% } %>
+                    <% } else { %>
+                        <%- mail_to(config.email, config.author) %>
+                    <% } %>
+                </span>
             </div>
         </div>
         <% } %>
