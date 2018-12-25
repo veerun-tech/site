@@ -150,7 +150,7 @@ plugins:
 ## includes/helpers/cdn.js
 providers:
   # Name or URL of the JavaScript and/or stylesheet CDN provider
-  cdn: '/thirdparty/cdn.jsdelivr.net/npm/${ package }@${ version }/${ filename }'
+  cdn: '[cdnjs]/thirdparty/cdn.jsdelivr.net/npm/${ package }@${ version }/${ filename }'
   # Name or URL of the webfont CDN provider
   fontcdn: '/thirdparty/fonts.googleapis.com/font.css?family=${ fontname }'
   # Name or URL of the webfont Icon CDN provider

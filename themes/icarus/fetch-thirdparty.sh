@@ -20,7 +20,7 @@ urls=(
 'https://cdn.jsdelivr.net/npm/pace-js@1.0.2/pace.min.js'
 'https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js'
 'https://cdn.jsdelivr.net/npm/moment@2.22.2/min/moment-with-locales.min.js'
-'https://cdn.jsdelivr.net/npm/highlight.js@9.12.0/styles/solarized-dark.css'
+'https://cdn.jsdelivr.net/npm/highlight.js@9.12.0/styles/solarized-dark.min.css'
 'https://cdn.jsdelivr.net/npm/lightgallery@1.6.8/dist/css/lightgallery.min.css'
 'https://cdn.jsdelivr.net/npm/lightgallery@1.6.8/dist/js/lightgallery.min.js'
 'https://cdn.jsdelivr.net/npm/justifiedGallery@3.7.0/dist/css/justifiedGallery.min.css'
@@ -60,6 +60,8 @@ for url in "${urls[@]}"; do
     proto=$(echo $url | grep :// | sed -e 's,^\(.*\)://.*,\1,g')
     resource_alias=$(echo $url | awk -F' ' '{print $2}')
     uri=$(echo $url | awk -F' ' '{print $1}' | sed -e "s,^$proto://,,g" | sed -e 's,\?.*,,g')
+    # details in 'includes/helpers/cdn.js'
+    uri=$(echo $uri | sed -E 's,/(unpacked|dist|min|outdatedbrowser)/,/,g' | sed -e 's,/pace-js@,/pace@,g; s,/outdatedbrowser@,/outdated-browser@,g; s,/moment@,/moment.js@,g')
     resource=$(basename $uri)
     resource_dir="${thirdparty_dir}/$(dirname $uri)"
 
