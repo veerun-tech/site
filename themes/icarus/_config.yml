@@ -147,10 +147,11 @@ plugins:
   progressbar: true
 # CDN provider settings
 # http://ppoffice.github.io/hexo-theme-icarus/Configuration/Theme/speed-up-your-site-with-custom-cdn/
+## includes/helpers/cdn.js
 providers:
   # Name or URL of the JavaScript and/or stylesheet CDN provider
-  cdn: jsdelivr
+  cdn: '/thirdparty/cdn.jsdelivr.net/npm/${ package }@${ version }/${ filename }'
   # Name or URL of the webfont CDN provider
-  fontcdn: google
+  fontcdn: '/thirdparty/fonts.googleapis.com/font.css?family=${ fontname }'
   # Name or URL of the webfont Icon CDN provider
-  iconcdn: fontawesome
+  iconcdn: '/thirdparty/use.fontawesome.com/releases/v5.4.1/css/all.css'
