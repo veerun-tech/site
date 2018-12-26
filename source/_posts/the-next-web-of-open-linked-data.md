@@ -6,9 +6,10 @@ categories:
   - 下一代互联网技术
 tags:
   - Linked Data
+thumbnail: /assets/gallery/the-linked-open-data-cloud.png
 ---
 
-下面是互联网之父[Tim Berners-Lee](https://en.wikipedia.org/wiki/Tim_Berners-Lee)在[TED](https://www.ted.com)上有关[Linked Data](http://www.w3.org/DesignIssues/LinkedData.html)技术的[演讲视频](https://www.ted.com/talks/tim_berners_lee_on_the_next_web)：
+下面是互联网之父[Tim Berners-Lee](https://en.wikipedia.org/wiki/Tim_Berners-Lee)在[TED](https://www.ted.com)上有关[Linked Data](https://en.wikipedia.org/wiki/Linked_data)技术的[演讲视频](https://www.ted.com/talks/tim_berners_lee_on_the_next_web)：
 
 <video src="/assets/video/The_Next_Web_of_Open_Linked_Data.mp4"
        controls="controls"
@@ -17,3 +18,5 @@ Sorry, your browser does not support the video tag! But, you can download it fro
 </video>
 
 > [Embeded subtitles into video](https://unix.stackexchange.com/questions/23351/how-can-i-embed-subtitles-into-videos-with-ffmpeg#answer-168353): `$ ffmpeg -i video.mp4 -vf subtitles=video.srt video-with-subtitle.mp4`
+
+<!-- more -->
