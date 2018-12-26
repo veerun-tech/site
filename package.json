@@ -8,7 +8,7 @@
     "dev": "npm run hexo -- server",
     "debug": "npm run hexo -- server --debug",
     "create": "npm run hexo -- new",
-    "build": "npm run hexo -- generate",
+    "build": "npm run hexo -- generate; cp -f source/404.html dist/",
     "site": "npm run hexo -- server -s",
     "clean": "npm run hexo -- clean",
     "deploy": "bash ./build/deploy.sh _config.yml,github.yml",

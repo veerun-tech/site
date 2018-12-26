@@ -17,6 +17,7 @@ try yarn install
 try npm run clean
 
 try npm run _build -- --config "${build_conf}"
+rm -f dist/404.html; try cp source/404.html dist/
 [ -e _multiconfig.yml ] && try rm _multiconfig.yml
 
 if [ ! -d $deploy_dir ]; then
