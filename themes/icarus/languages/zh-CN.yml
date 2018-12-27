@@ -22,9 +22,13 @@ widget:
 article:
     more: '阅读更多'
     comments: '评论'
-    read: '读完'
-    about: '大约'
-    words: '个字'
+    readtime: '阅读时长: %s'
+    wordcount: '大约%s个字'
+    copyright:
+        author: 文章作者
+        link: 文章链接
+        notice: 版权声明
+        content: '本文章采用 <a href="%s" target="_blank">%s</a> 许可协议。转载请注明来自 <a href="%s" target="_blank">%s</a>！'
 plugin:
     backtotop: '回到顶端'
 search:

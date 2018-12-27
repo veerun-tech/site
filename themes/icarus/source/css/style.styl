@@ -312,6 +312,40 @@ img.thumbnail
             strong + cite
                 margin-left: 0.5em
 
+.post-copyright
+    position: relative
+    margin-bottom: 1rem
+    padding: 0.5rem 0.8rem
+    border: 1px solid #eee
+    transition: box-shadow 0.3s ease-in-out
+
+    &:before
+        position: absolute
+        top: t = 0.5rem
+        right: t
+        width: w = 0.8rem
+        height: w
+        border-radius: w
+        background: #49b1f5
+        content: ""
+
+    &:after
+        position: absolute
+        top: t = 0.7rem
+        right: t
+        width: w = 0.4rem
+        height: w
+        border-radius: w
+        background: #fff
+        content: ""
+
+    &:hover
+        box-shadow: 0 0 8px 0 rgba(232, 237, 250, 0.6), 0 2px 4px 0 rgba(232, 237, 250, 0.5)
+
+    &-meta
+        color: #49b1f5
+        font-weight: bold
+
 /* ---------------------------------
  *        Fix code highlight
  * --------------------------------- */

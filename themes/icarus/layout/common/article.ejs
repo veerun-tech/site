@@ -8,7 +8,7 @@
     <% } %>
     <div class="card-content article <%= post.hasOwnProperty('direction') ? post.direction : '' %>">
         <% if (post.layout != 'page') { %>
-        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
+        <div class="level article-meta is-size-7 is-mobile is-overflow-x-auto"><!-- is-uppercase -->
             <div class="level-left">
                 <time class="level-item has-text-grey" datetime="<%= date_xml(post.date) %>"><%= date(post.date) %></time>
                 <% if (post.categories && post.categories.length) { %>
@@ -25,34 +25,12 @@
                 <span class="level-item has-text-grey">
                     <% const words = word_count(post._content); %>
                     <% const time = duration((words / 150.0) * 60, 'seconds') %>
-                    <%= `${ time.locale(get_config('language', 'en')).humanize() } ${ __('article.read')} (${ __('article.about') } ${ words } ${ __('article.words') })` %>
+                    <%= `${ __('article.readtime', time.locale(get_config('language', 'en')).humanize())} (${ __('article.wordcount', words) })` %>
                 </span>
                 <% } %>
                 <span class="level-item has-text-grey">
                     <i class="fas fa-user-graduate"></i>&nbsp;
-                    <% if (post.author) { %>
-                        <% let author = {}; %>
-                        <% if (typeof(post.author) === 'string') { %>
-                            <% let matches = /^(.+?)(\s*<(.+)>)?$/.exec(post.author); %>
-                            <% author.name = matches[1]; %>
-                            <% if (/^http(s)?/.test(matches[3])) { %>
-                                <% author.url = matches[3]; %>
-                            <% } else { %>
-                                <% author.email = matches[3]; %>
-                            <% } %>
-                        <% } else { %>
-                            <% author = post.author;  %>
-                        <% } %>
-                        <% if (author.url) { %>
-                            <%- link_to(author.url, author.name, {external: true}) %>
-                        <% } else if (author.email) { %>
-                            <%- mail_to(author.email, author.name) %>
-                        <% } else { %>
-                            <%= author.name %>
-                        <% } %>
-                    <% } else { %>
-                        <%- mail_to(config.email, config.author) %>
-                    <% } %>
+                    <%- get_author_link(post) %>
                 </span>
             </div>
         </div>
@@ -67,6 +45,34 @@
         <div class="content">
             <%- index && post.excerpt ? post.excerpt : post.content %>
         </div>
+        <% if (!index && theme.copyright && theme.copyright.enable && post.copyright !== false) { %>
+        <div class="post-copyright">
+            <div class="author">
+                <span class="post-copyright-meta">
+                    <%= __('article.copyright.author') %>
+                </span>:&nbsp;
+                <span class="post-copyright-info">
+                    <%- get_author_link(post) %>
+                </span>
+            </div>
+            <div class="type">
+                <span class="post-copyright-meta">
+                    <%= __('article.copyright.link') %>
+                </span>:&nbsp;
+                <span class="post-copyright-info">
+                    <%- link_to(page.permalink, page.permalink) %>
+                </span>
+            </div>
+            <div class="notice">
+                <span class="post-copyright-meta">
+                    <%= __('article.copyright.notice') %>
+                </span>:&nbsp;
+                <span class="post-copyright-info">
+                    <%- __('article.copyright.content', theme.copyright.license_url, theme.copyright.license, config.url, config.title) %>
+                </span>
+            </div>
+        </div>
+        <% } %>
         <% if (!index && post.tags && post.tags.length) { %>
         <div class="level is-size-7 is-uppercase">
             <div class="level-start">

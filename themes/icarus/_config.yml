@@ -19,20 +19,25 @@ navbar:
   links:
     GitHub:
       icon: fab fa-github
-      url: 'https://github.com/veerun-tech'
+      url: https://github.com/veerun-tech
+# Post copyright settings
+copyright:
+  enable: true
+  license: CC BY 4.0
+  license_url: https://creativecommons.org/licenses/by/4.0/
 # Footer section link settings
 footer:
   # Links to be shown on the right of the footer section
   links:
     Creative Commons:
       icon: fab fa-creative-commons
-      url: 'https://creativecommons.org/'
+      url: https://creativecommons.org/
     Attribution 4.0 International:
       icon: fab fa-creative-commons-by
-      url: 'https://creativecommons.org/licenses/by/4.0/'
+      url: https://creativecommons.org/licenses/by/4.0/
     GitHub:
       icon: fab fa-github
-      url: 'https://github.com/veerun-tech'
+      url: https://github.com/veerun-tech
 # Article display settings
 article:
   # Code highlight theme
@@ -81,14 +86,14 @@ widgets:
     author_title: Veerun Tech
     location: China, Earth
     avatar: /assets/images/favicon.png
-    follow_link: 'http://github.com/veerun-tech'
+    follow_link: http://github.com/veerun-tech
     social_links:
       Github:
         icon: fab fa-github
-        url: 'http://github.com/veerun-tech'
+        url: http://github.com/veerun-tech
       Email:
         icon: fas fa-envelope
-        url: 'mailto:veerun@163.com'
+        url: mailto:veerun@163.com
       RSS:
         icon: fas fa-rss
         url: /atom.xml
@@ -99,7 +104,7 @@ widgets:
   - type: links
     position: right
     links:
-      Github: 'https://github.com/veerun-tech'
+      Github: https://github.com/veerun-tech
   - type: recent_posts
     position: right
   - type: category
@@ -154,4 +159,4 @@ providers:
   # Name or URL of the webfont CDN provider
   fontcdn: '/thirdparty/fonts.googleapis.com/font.css?family=${ fontname }'
   # Name or URL of the webfont Icon CDN provider
-  iconcdn: '/thirdparty/use.fontawesome.com/releases/v5.4.1/css/all.css'
+  iconcdn: /thirdparty/use.fontawesome.com/releases/v5.4.1/css/all.css

@@ -22,9 +22,13 @@ widget:
 article:
     more: 'Read More'
     comments: 'Comments'
-    read: 'read'
-    about: 'About'
-    words: 'words'
+    readtime: 'Reading time: %s'
+    wordcount: 'About %s words'
+    copyright:
+        author: Author
+        link: Link
+        notice: Copyright Notice
+        content: 'All articles in this blog are licensed under <a href="%s" target="_blank">%s</a> unless stating additionally.'
 plugin:
     backtotop: 'Back to Top'
 search:

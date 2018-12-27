@@ -93,4 +93,37 @@ module.exports = function (hexo) {
         const hasThumbnail = hexo.extend.helper.get('has_thumbnail').bind(this)(post);
         return this.url_for(hasThumbnail ? post.thumbnail : 'images/thumbnail.svg');
     });
+
+    hexo.extend.helper.register('get_author_link', function (post) {
+        const author = hexo.extend.helper.get('get_author').bind(this)(post);
+        let link = author.name;
+        if (author.url) {
+            link = this.link_to(author.url, author.name, {external: true});
+        } else if (author.email) {
+            link = this.mail_to(author.email, author.name);
+        }
+        return link;
+    });
+
+    hexo.extend.helper.register('get_author', function (post) {
+        const config = Object.assign({}, this.config, hexo.theme.config);
+        let author = {};
+        if (post.author) {
+            if (typeof(post.author) === 'string') {
+                let matches = /^(.+?)(\s*<(.+)>)?$/.exec(post.author);
+
+                author.name = matches[1];
+                if (/^http(s)?/.test(matches[3])) {
+                    author.url = matches[3];
+                } else {
+                    author.email = matches[3];
+                }
+            } else {
+                author = post.author;
+            }
+        } else {
+            author = {name: config.author, email: config.email};
+        }
+        return author;
+    });
 }
