@@ -7,6 +7,9 @@ categories:
 tags:
   - Linked Data
 thumbnail: /assets/gallery/the-linked-open-data-cloud.png
+thumbnail_source:
+  text: Wikipedia
+  url: https://en.wikipedia.org/wiki/Linked_data
 ---
 
 下面是互联网之父[Tim Berners-Lee](https://en.wikipedia.org/wiki/Tim_Berners-Lee)在[TED](https://www.ted.com)上有关[Linked Data](https://en.wikipedia.org/wiki/Linked_data)技术的[演讲视频](https://www.ted.com/talks/tim_berners_lee_on_the_next_web)：
