@@ -29,6 +29,8 @@ article:
         link: Link
         notice: Copyright Notice
         content: 'All articles in this blog are licensed under <a href="%s" target="_blank">%s</a> unless stating additionally.'
+    thumbnail:
+        source: '▲ Image From: <a href="%s" target="_blank">%s</a>'
 plugin:
     backtotop: 'Back to Top'
 search:
